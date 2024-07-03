@@ -80,6 +80,23 @@ class FlaskTestCase(unittest.TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertIn(b"Tip deleted successfully", response.data)
 
+    def test_search_tip_success(self):
+        self.app.post("/tips", data=json.dumps({
+            "title": "Sustainable House",
+            "content": "This is a test tip.",
+            "category": "House",
+            "author": "test_user"
+        }), content_type="application/json")
+
+        query_string = "house"
+        response = self.app.get(f"/search?query={query_string}")
+        self.assertEqual(response.status_code, 200)
+        self.assertIn(b"Sustainable House", response.data)
+
+    def test_search_empty(self):
+        response = self.app.get("/search")
+        self.assertEqual(response.status_code, 400)
+
 
 if __name__ == "__main__":
     unittest.main()
