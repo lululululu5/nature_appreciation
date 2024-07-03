@@ -24,13 +24,19 @@ The Sustainability Tips API provides a platform to access and manage tips relate
 
 2. **Install dependencies:**
 
+   ```bash
    pip install -r requirements.txt
+   ```
 
 3. **Set up the databases:**
 
+   ```bash
    python db.py
    python test_db.py
+   ```
 
 4. **Run the application:**
 
+   ```bash
    flask --app main run --debug
+   ```
