@@ -1,0 +1,152 @@
+[
+  {
+    "title": "Unplug Appliances",
+    "content": "Unplug appliances when not in use to save energy.",
+    "category": "House"
+  },
+  {
+    "title": "Use LED Bulbs",
+    "content": "Replace incandescent bulbs with LED ones to reduce energy consumption.",
+    "category": "House"
+  },
+  {
+    "title": "Insulate Your Home",
+    "content": "Insulate walls and roofs to reduce heating and cooling energy needs.",
+    "category": "House"
+  },
+  {
+    "title": "Low-Flow Showerheads",
+    "content": "Install low-flow showerheads to conserve water.",
+    "category": "House"
+  },
+  {
+    "title": "Use Solar Panels",
+    "content": "Install solar panels to generate renewable energy.",
+    "category": "House"
+  },
+  {
+    "title": "Use Public Transport",
+    "content": "Use public transportation to reduce carbon emissions.",
+    "category": "Travel"
+  },
+  {
+    "title": "Carpool",
+    "content": "Carpool with colleagues or friends to save fuel.",
+    "category": "Travel"
+  },
+  {
+    "title": "Bike to Work",
+    "content": "Bike to work to reduce your carbon footprint.",
+    "category": "Travel"
+  },
+  {
+    "title": "Use Eco-Friendly Vehicles",
+    "content": "Drive electric or hybrid cars to reduce emissions.",
+    "category": "Travel"
+  },
+  {
+    "title": "Travel Light",
+    "content": "Pack light to reduce fuel consumption on flights.",
+    "category": "Travel"
+  },
+  {
+    "title": "Buy Second-Hand Clothes",
+    "content": "Purchase second-hand clothing to reduce waste.",
+    "category": "Clothing"
+  },
+  {
+    "title": "Choose Natural Fibers",
+    "content": "Wear clothes made from natural fibers like cotton and wool.",
+    "category": "Clothing"
+  },
+  {
+    "title": "Wash with Cold Water",
+    "content": "Wash clothes in cold water to save energy.",
+    "category": "Clothing"
+  },
+  {
+    "title": "Air Dry Clothes",
+    "content": "Air dry clothes instead of using a dryer.",
+    "category": "Clothing"
+  },
+  {
+    "title": "Repair and Reuse",
+    "content": "Repair clothes instead of discarding them.",
+    "category": "Clothing"
+  },
+  {
+    "title": "Unplug Devices",
+    "content": "Unplug devices when not in use to save energy.",
+    "category": "Electronics"
+  },
+  {
+    "title": "Use Energy-Efficient Devices",
+    "content": "Choose energy-efficient electronics to reduce power consumption.",
+    "category": "Electronics"
+  },
+  {
+    "title": "Recycle E-Waste",
+    "content": "Properly recycle electronic waste.",
+    "category": "Electronics"
+  },
+  {
+    "title": "Reduce Screen Brightness",
+    "content": "Lower screen brightness to save energy.",
+    "category": "Electronics"
+  },
+  {
+    "title": "Use Smart Power Strips",
+    "content": "Use smart power strips to cut off power to devices when not in use.",
+    "category": "Electronics"
+  },
+  {
+    "title": "Eat Local",
+    "content": "Buy and eat locally grown food to reduce carbon footprint.",
+    "category": "Food"
+  },
+  {
+    "title": "Reduce Meat Consumption",
+    "content": "Cut down on meat consumption to lower greenhouse gas emissions.",
+    "category": "Food"
+  },
+  {
+    "title": "Grow Your Own Food",
+    "content": "Start a home garden to grow your own fruits and vegetables.",
+    "category": "Food"
+  },
+  {
+    "title": "Use Reusable Bags",
+    "content": "Bring reusable bags when grocery shopping to reduce plastic waste.",
+    "category": "Food"
+  },
+  {
+    "title": "Compost Food Scraps",
+    "content": "Compost food scraps instead of throwing them away.",
+    "category": "Food"
+  },
+  {
+    "title": "Use Reusable Containers",
+    "content": "Store food in reusable containers to reduce waste.",
+    "category": "Food"
+  },
+  {
+    "title": "Avoid Single-Use Plastics",
+    "content": "Avoid using single-use plastics like straws and utensils.",
+    "category": "Food"
+  },
+  {
+    "title": "Buy in Bulk",
+    "content": "Purchase food in bulk to reduce packaging waste.",
+    "category": "Food"
+  },
+  {
+    "title": "Use a Water Filter",
+    "content": "Use a water filter instead of buying bottled water.",
+    "category": "Food"
+  },
+  {
+    "title": "Plan Meals",
+    "content": "Plan meals to avoid food waste.",
+    "category": "Food"
+  }
+]

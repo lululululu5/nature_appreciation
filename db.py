@@ -12,7 +12,7 @@ cursor.execute("""
                    content TEXT NOT NULL,
                    category TEXT,
                    date_added TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-                   author TEXT
+                   author TEXT DEFAULT mapache
                )
                """)
 

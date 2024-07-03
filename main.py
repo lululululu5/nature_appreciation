@@ -1,15 +1,21 @@
 import sqlite3
+import random
 from flask import Flask, request, jsonify, abort, g
+from flask_httpauth import HTTPBasicAuth
+
 
 app = Flask(__name__)
+auth = HTTPBasicAuth()
 DATABASE = "sustainability_tips.db"
+
+users = {"admin": "password123"}
 
 
 def get_db():
     db = getattr(g, '_database', None)
     if db is None:
         db = g._database = sqlite3.connect(DATABASE)
-        db.row_factory = sqlite3.Row  # This allows us to access columns by name
+        db.row_factory = sqlite3.Row
     return db
 
 
@@ -27,6 +33,13 @@ def close_connection(exception):
         db.close()
     if exception:
         print(f"An exception occurred: {exception}")
+
+
+@auth.verify_password
+def verify_password(username, password):
+    if username in users and users[username] == password:
+        return username
+    return None
 
 
 @app.route("/tips", methods=["GET", "POST"])
@@ -74,6 +87,7 @@ def handle_tips():
 
 
 @app.route("/delete_tip/<int:id>", methods=["DELETE"])
+@auth.login_required
 def delete_tip(id):
     tip = query_db("SELECT * FROM tips WHERE id = ?", [id], one=True)
     if tip is None:
@@ -84,3 +98,51 @@ def delete_tip(id):
     get_db().commit()
 
     return jsonify({"status": "Tip deleted successfully"}), 200
+
+
+@app.route("/search")
+def search_tip():
+    query = request.args.get('query')
+    if not query:
+        return jsonify({"error": "Query parameter is required"}), 400
+
+    wildcard_query = f"%{query}%"
+    search_results = query_db("""SELECT * FROM tips
+            WHERE title LIKE ? OR content LIKE ? OR category LIKE ?
+            """, [wildcard_query, wildcard_query, wildcard_query])
+
+    tips_list = []
+    for tip in search_results:
+        tips_list.append({
+            "id": tip["id"],
+            "title": tip["title"],
+            "content": tip["content"],
+            "category": tip["category"],
+            "author": tip["author"],
+            "date_added": tip["date_added"]
+        })
+
+    return jsonify(tips_list), 200
+
+
+@app.route("/random_tip", methods=["GET"])
+def random_tip():
+    size = query_db("SELECT COUNT(*) FROM tips", one=True)[0]
+    if size == 0:
+        return jsonify({"error": "No tips available"}), 404
+
+    i = random.randint(1, size)
+
+    tip = None
+    while not tip:
+        tip = query_db("SELECT * FROM tips WHERE id = ?", [i], one=True)
+        if not tip:
+            i = random.randint(1, size)
+
+    return jsonify({
+        "id": tip["id"],
+        "title": tip["title"],
+        "content": tip["content"],
+        "category": tip["category"],
+        "author": tip["author"],
+        "date_added": tip["date_added"]}), 200
