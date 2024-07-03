@@ -1,4 +1,6 @@
 __pycache__
 venv/
 notes.txt
+
 sustainability_tips.db
+test.db
